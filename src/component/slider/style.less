@@ -1,0 +1,37 @@
+@keyframes item {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.parent {
+  width: 750px;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.child {
+  width: 300px;
+  height: 200px;
+  display: inline-block;
+
+  &.child-animation-true {
+    opacity: 1;
+    animation: item 1s cubic-bezier(0.66, 0, 0.33, 1);
+  }
+}
+
+.empty {
+  width: 0;
+
+  &[data-show=true] {
+    width: 300px;
+    margin-left: -300px;
+    transition: width 1s linear;
+  }
+}
